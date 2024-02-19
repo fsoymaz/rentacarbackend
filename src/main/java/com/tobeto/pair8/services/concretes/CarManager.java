@@ -7,7 +7,6 @@ import com.tobeto.pair8.repositories.CarRepository;
 import com.tobeto.pair8.rules.car.CarBusinessRulesMenager;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
-import com.tobeto.pair8.services.dtos.car.requests.DeleteCarRequest;
 import com.tobeto.pair8.services.dtos.car.requests.UpdateCarRequest;
 import com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
@@ -56,9 +55,9 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public void delete(DeleteCarRequest deleteCarRequest) {
-        Car carToDelete = carRepository.findById(deleteCarRequest.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Araç bulunamadı, ID: " + deleteCarRequest.getId()));
+    public void delete(Integer id) {
+        Car carToDelete = carRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Araç bulunamadı, ID: " + id));
 
         carRepository.delete(carToDelete);
     }

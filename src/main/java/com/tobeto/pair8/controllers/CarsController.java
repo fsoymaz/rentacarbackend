@@ -1,10 +1,8 @@
 package com.tobeto.pair8.controllers;
 
 import com.tobeto.pair8.entities.concretes.Category;
-import com.tobeto.pair8.entities.concretes.Location;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
-import com.tobeto.pair8.services.dtos.car.requests.DeleteCarRequest;
 import com.tobeto.pair8.services.dtos.car.requests.UpdateCarRequest;
 import com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
@@ -47,10 +45,11 @@ public class CarsController {
         carService.add(addCarRequest);
     }
 
-    @DeleteMapping
-    public void delete(@RequestBody @Valid DeleteCarRequest deleteCarRequest) {
-        carService.delete(deleteCarRequest);
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        carService.delete(id);
     }
+
 
     @PutMapping
     public void update(@RequestBody @Valid UpdateCarRequest updateCarRequest) {
@@ -74,15 +73,14 @@ public class CarsController {
 
     @GetMapping("/availableByCategory")
     public List<GetAllListCarResponse> getAvailableCarsByCategory(
-            @RequestParam  LocalDate startDate,
-            @RequestParam  LocalDate endDate,
+            @RequestParam LocalDate startDate,
+            @RequestParam LocalDate endDate,
             @RequestParam(required = false) Integer locationId,
             @RequestParam(required = false) Category category,
             @RequestParam(required = false) Integer brandId,
             @RequestParam(required = false) Integer modelId,
             @RequestParam(required = false) Double minPrice,
-            @RequestParam(required = false) Double maxPrice)
-    {
+            @RequestParam(required = false) Double maxPrice) {
         return carService.getAvailableCarsByCategory(startDate, endDate, locationId, category, modelId, brandId, minPrice, maxPrice);
     }
 
