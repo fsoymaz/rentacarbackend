@@ -9,7 +9,6 @@ import com.tobeto.pair8.services.dtos.brand.requests.AddBrandRequest;
 import com.tobeto.pair8.services.dtos.brand.requests.DeleteBrandRequest;
 import com.tobeto.pair8.services.dtos.brand.requests.UpdateBrandRequest;
 import com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse;
-import com.tobeto.pair8.services.dtos.brand.responses.GetNameBrandResponse;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -60,16 +59,4 @@ public class BrandManager implements BrandService {
                 .collect(Collectors.toList());
         return brandResponses;
     }
-
-    @Override
-    public List<GetNameBrandResponse> getList() {
-        List<Brand> brands = brandRepository.findAll();
-        List<GetNameBrandResponse> brandResponses = brands.stream()
-                .map(brand -> this.modelMapperService
-                        .forResponse().map(brand, GetNameBrandResponse.class))
-                .collect(Collectors.toList());
-
-        return brandResponses;
-    }
-
 }
