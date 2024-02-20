@@ -34,7 +34,6 @@ public class ModelManager implements ModelService {
         modelRulesService.checkModel(addModelRequest.getName());
 
         Model model = this.modelMapperService.forRequest().map(addModelRequest, Model.class);
-        model.setId(null);
         modelRepository.save(model);
     }
 

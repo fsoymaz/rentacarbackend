@@ -60,7 +60,6 @@ public class UserManager implements UserService {
                 .authorities(addUserRequest.getRoles())
                 .password(passwordEncoder.encode(addUserRequest.getPassword()))
                 .build();
-        userAut.setId(null);
         userRepository.save(userAut);
 
     }
@@ -71,12 +70,9 @@ public class UserManager implements UserService {
         //userBusinessRulesService.truePassword(updateUserRequest.getPassword(),
         //updateUserRequest.getConfirmPassword());
         User userUpdate = userRepository.findById(updateUserRequest.getId()).orElseThrow();
-
         userUpdate.setUsername(updateUserRequest.getUsername());
         userUpdate.setAuthorities(updateUserRequest.getRoles());
         userUpdate.setPassword(passwordEncoder.encode(updateUserRequest.getPassword()));
-
-
         userRepository.saveAndFlush(userUpdate);
     }
 
@@ -87,8 +83,6 @@ public class UserManager implements UserService {
         //updateUserRequest.getConfirmPassword());
         User userUpdate = userRepository.findById(updateUserRequest.getId()).orElseThrow();
         userUpdate.setCredit(updateUserRequest.getCreditCard());
-
-
         userRepository.saveAndFlush(userUpdate);
     }
 
@@ -133,7 +127,6 @@ public class UserManager implements UserService {
     public GetByIdCreditCardResponse getCreditCardById(int id) {
       return creditCardService.getCreditCardById(id);
     }
-
 
 
     @Override

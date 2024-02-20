@@ -46,7 +46,6 @@ public class RentalManager implements RentalService {
         Rental rental = this.modelMapperService.forRequest().map(addRentalRequest, Rental.class);
         rental.setTotalPrice(TotalPrice(addRentalRequest.getStartDate(), addRentalRequest.getEndDate(), carResponse.getDailyPrice()));
         rental.setStartKilometer(carResponse.getKilometer());
-        rental.setId(null);
        Rental rental1 = rentalRepository.save(rental);
        Invoice invoice =invoiceService.add(new AddInvoiceRequest(rental1,rental1.getTotalPrice()));
        GetByIdUserResponse getByIdUserResponse = userService.getById(rental1.getUser().getId());
@@ -61,7 +60,6 @@ public class RentalManager implements RentalService {
                 .firstName(getByIdUserResponse.getFirstName())
                 .lastName(getByIdUserResponse.getLastName())
                 .email(getByIdUserResponse.getEmail())
-
                 .build();
     }
 

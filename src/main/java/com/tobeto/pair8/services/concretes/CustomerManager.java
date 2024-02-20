@@ -37,7 +37,6 @@ public class CustomerManager implements CustomerService {
         customerBusinessRulesService.ageControl(addCustomerRequest.getBirthDate());
         Customer customer = this.modelMapperService.forRequest().map(addCustomerRequest, Customer.class);
 
-        customer.setId(null);
         customerRepository.save(customer);
     }
 

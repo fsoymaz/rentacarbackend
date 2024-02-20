@@ -10,7 +10,6 @@ import lombok.Data;
 
 @Data
 public class AddModelRequest {
-    private int id;
     @NotBlank(message = "model ismi boş olamaz")
     @Size(min = 2, message = "Model ismi en az iki hane olmalıdır.")
     private String name;

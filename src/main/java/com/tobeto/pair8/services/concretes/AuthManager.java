@@ -53,11 +53,6 @@ public class AuthManager implements AutService {
             var user =userRepository.findByEmail(loginRequest.getEmail()).orElseThrow();
             String accessToken = jwtService.generateToken(loginRequest.getEmail(),user);
             String refreshToken = jwtService.generateRefreshToken(loginRequest.getEmail(),user);
-            /*Map<String, String> tokens = new HashMap<>();
-            tokens.put("accessToken",accessToken);
-            tokens.put("refreshToken",refreshToken);
-
-             */
             AuthResponse authResponse = new AuthResponse();
             authResponse.setAccessToken("Bearer " + accessToken);
             authResponse.setRefreshToken("Bearer " + refreshToken);
@@ -85,7 +80,6 @@ public class AuthManager implements AutService {
                 .authorities(Role.USER)
                 .password(passwordEncoder.encode(addRegisterCustomerAndUser.getPassword()))
                 .build();
-        userAut.setId(null);
         User userSaved = userRepository.save(userAut);
         customer.setUser(userSaved);
         customerRepository.save(customer);

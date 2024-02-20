@@ -28,7 +28,6 @@ public class BrandManager implements BrandService {
     public void add(AddBrandRequest addBrandRequest) {
         brandBusinessRulesService.exceptionSameBrand(addBrandRequest.getName());
         Brand brand = this.modelMapperService.forRequest().map(addBrandRequest, Brand.class);
-        brand.setId(null);
         brandRepository.save(brand);
     }
 
