@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api/auths")
 @AllArgsConstructor
-@CrossOrigin
 public class AuthsController {
 
     private final AutService authService;
