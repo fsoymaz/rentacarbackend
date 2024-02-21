@@ -38,7 +38,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         if (jwtHeader != null && jwtHeader.startsWith("Bearer ")) {
             String jwt = jwtHeader.substring(7);
 
-            // Access token'ı doğrula ve kullanıcı adını çıkar
             String email = jwtService.extractUser(jwt);
             var user2=userRepository.findByEmail(email).orElseThrow();
 
@@ -47,41 +46,32 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if (email != null) {
                 UserDetails user = userService.loadUserByUsername(email);
 
-                // Eğer access token geçerliyse
                 if (jwtService.validateToken(jwt, user)) {
-                    // Access token geçerliyse, authenticationToken oluştur ve güvenlik bağlamına ekle
                     UsernamePasswordAuthenticationToken authenticationToken =
                             new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
                     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 } else {
-                    // Eğer access token geçerli değilse, refresh token kontrolü yap
                     String refreshTokenHeader = request.getHeader("Refresh-Token");
 
                     if (refreshTokenHeader != null) {
                         String refreshToken = refreshTokenHeader.substring(7); // Refresh token
 
-                        // Refresh token'ı doğrula ve kullanıcı adını çıkar
                         String refreshUsername = jwtService.extractUser(refreshToken);
 
                         if (refreshUsername != null) {
                             UserDetails refreshUser = userService.loadUserByUsername(refreshUsername);
 
-                            // Eğer refresh token geçerliyse, yeni bir access token oluştur
                             if (jwtService.validateToken(refreshToken, refreshUser)) {
                                 String newAccessToken = jwtService.generateToken(refreshUsername,user2);
 
-                                // Yeni access token'ı response header'ına ekle
                                 response.setHeader("Authorization", "Bearer " + newAccessToken);
 
-                                // Authentication nesnesini güncelle
                                 UsernamePasswordAuthenticationToken authenticationToken =
                                         new UsernamePasswordAuthenticationToken(refreshUser, null, refreshUser.getAuthorities());
                                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                             }
-
-
                         }
                     }
                 }
