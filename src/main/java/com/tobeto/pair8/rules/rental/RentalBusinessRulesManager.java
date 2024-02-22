@@ -1,11 +1,9 @@
 package com.tobeto.pair8.rules.rental;
 
-import com.tobeto.pair8.core.utilities.exceptions.MaxRentalDaysExceededException;
+import com.tobeto.pair8.core.utilities.exceptions.entityException.MaxRentalDaysExceededException;
 import com.tobeto.pair8.core.utilities.exceptions.entityException.EndDateBeforeStartDateException;
 import com.tobeto.pair8.core.utilities.exceptions.entityException.SameCarOrUserInAnotherRentalException;
 import com.tobeto.pair8.repositories.RentalRepository;
-import com.tobeto.pair8.services.dtos.brand.requests.DeleteBrandRequest;
-import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

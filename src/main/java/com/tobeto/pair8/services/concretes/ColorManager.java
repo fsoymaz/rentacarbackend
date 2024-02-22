@@ -26,7 +26,6 @@ public class ColorManager implements ColorService {
     public void add(AddColorRequest addColorRequest) {
         colorBusinessRulesService.exceptionSameName(addColorRequest.getName());
         Color color = this.modelMapperService.forRequest().map(addColorRequest, Color.class);
-        color.setId(null);
         colorRepository.save(color);
     }
 

@@ -25,7 +25,6 @@ public class LocationManager implements LocationService {
     @Override
     public void add(AddLocation addLocation) {
         Location location = this.modelMapperService.forRequest().map(addLocation, Location.class);
-        location.setId(null);
         locationRepository.save(location);
     }
 

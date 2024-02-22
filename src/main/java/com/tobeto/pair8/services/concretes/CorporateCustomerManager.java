@@ -35,7 +35,6 @@ public class CorporateCustomerManager implements CorporateCustomerService {
         corporateCustomerBusinessRulesService.sameUser(addCorporateCustomerRequest.getUserId());
 
         CorporateCustomer corporateCustomer = this.modelMapperService.forRequest().map(addCorporateCustomerRequest, CorporateCustomer.class);
-        corporateCustomer.setId(null);
         corporateCustomerRepository.save(corporateCustomer);
     }
 

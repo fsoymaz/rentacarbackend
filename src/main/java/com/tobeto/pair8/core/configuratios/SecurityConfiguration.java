@@ -59,13 +59,18 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(x -> x
+                .authorizeHttpRequests(auth -> auth
                         .requestMatchers(WHITE_LIST_URLS).permitAll()
-                       // .requestMatchers().hasAnyAuthority(Role.ADMIN.name())
-                       // .requestMatchers(HttpMethod.GET,"/api/cars/**").permitAll()
+                        .requestMatchers("swagger-ui/**").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/users/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/users/getByEmail").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/brands/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/colors/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .httpBasic(AbstractHttpConfigurer::disable)
+                .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 

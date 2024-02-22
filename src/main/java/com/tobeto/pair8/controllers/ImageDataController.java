@@ -13,7 +13,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/imagedata")
 @AllArgsConstructor
-@CrossOrigin
 public class ImageDataController {
     private final ImageDataService dataService;
 
