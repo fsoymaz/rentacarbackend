@@ -1,7 +1,6 @@
 package com.tobeto.pair8.services.abstracts;
 
 import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
-import com.tobeto.pair8.services.dtos.rental.requests.DeleteRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
@@ -14,7 +13,7 @@ public interface RentalService {
 
     void update(UpdateRentalRequest updateRentalRequest);
 
-    void delete(DeleteRentalRequest deleteRentalRequest);
+    void delete(Integer deleteRentalRequest);
 
 
     List<GetListRentalResponse> getAll();

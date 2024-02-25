@@ -7,6 +7,7 @@ import com.tobeto.pair8.repositories.CarRepository;
 import com.tobeto.pair8.rules.car.CarBusinessRulesMenager;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
+import com.tobeto.pair8.services.dtos.car.requests.CarDiscountRequest;
 import com.tobeto.pair8.services.dtos.car.requests.UpdateCarRequest;
 import com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
@@ -45,7 +46,6 @@ public class CarManager implements CarService {
     }
 
 
-
     @Override
     public void add(AddCarRequest addCarRequest) {
         carBusinessRulesMenager.exceptionSamePlate(addCarRequest.getPlate());
@@ -77,10 +77,12 @@ public class CarManager implements CarService {
     public List<GetAllListCarResponse> getAvailableCars(LocalDate startDate, LocalDate endDate, Integer locationId) {
         return carRepository.findAvailableCars(startDate, endDate, locationId);
     }
+
     @Override
     public List<GetAllListCarResponse> getCategorizeCars(Category category) {
         return carRepository.findByCategory(category);
     }
+
     @Override
     public List<GetAllListCarResponse> getAvailableCarsByCategory(LocalDate startDate, LocalDate endDate, Integer locationId, Category category, Integer modelId, Integer brandId, Double minPrice, Double maxPrice) {
         return carRepository.findAvailableCarsByCategory(startDate, endDate, locationId, category, modelId, brandId, minPrice, maxPrice);
@@ -91,4 +93,16 @@ public class CarManager implements CarService {
         return carRepository.findPlate(plate);
     }
 
+    @Override
+    public void updateDiscount(CarDiscountRequest updateCarRequest, Integer carId) {
+        Car carToUpdate = carRepository.findById(carId)
+                .orElseThrow();
+        this.modelMapperService.forRequest().map(updateCarRequest, carToUpdate);
+        carRepository.saveAndFlush(carToUpdate);
+    }
+
+    @Override
+    public List<GetAllListCarResponse> findDiscountedCars() {
+        return carRepository.findwithDiscountCars();
+    }
 }

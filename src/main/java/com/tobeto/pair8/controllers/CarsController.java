@@ -3,6 +3,7 @@ package com.tobeto.pair8.controllers;
 import com.tobeto.pair8.entities.concretes.Category;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
+import com.tobeto.pair8.services.dtos.car.requests.CarDiscountRequest;
 import com.tobeto.pair8.services.dtos.car.requests.UpdateCarRequest;
 import com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
@@ -11,6 +12,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -19,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/cars")
 @AllArgsConstructor
+@CrossOrigin
 public class CarsController {
     private CarService carService;
 
@@ -81,6 +84,17 @@ public class CarsController {
             @RequestParam(required = false) Double minPrice,
             @RequestParam(required = false) Double maxPrice) {
         return carService.getAvailableCarsByCategory(startDate, endDate, locationId, category, modelId, brandId, minPrice, maxPrice);
+    }
+
+    @PutMapping("/discount")
+    public void updateDiscount(@RequestBody @Valid CarDiscountRequest updateCarRequest, @RequestParam Integer carId) {
+        carService.updateDiscount(updateCarRequest, carId);
+    }
+
+    @GetMapping("/discounted")
+    public ResponseEntity<List<GetAllListCarResponse>> getDiscountedCars() {
+        List<GetAllListCarResponse> discountedCars = carService.findDiscountedCars();
+        return ResponseEntity.ok(discountedCars);
     }
 
 }

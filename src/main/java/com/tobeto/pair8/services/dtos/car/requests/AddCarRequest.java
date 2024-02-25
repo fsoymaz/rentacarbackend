@@ -53,5 +53,6 @@ public class AddCarRequest {
     @Positive
     private int colorId;
     private int locationId;
+    private Double discount;
 
 }

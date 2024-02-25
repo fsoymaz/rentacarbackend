@@ -17,6 +17,7 @@ public class GetByIdCarResponse {
     private Long kilometer;
     private String plate;
     private Double dailyPrice;
+    private Double discount;
     private String imagePath;
     private GetAllListModelRespose model;
     private GetColorNameResponse color;

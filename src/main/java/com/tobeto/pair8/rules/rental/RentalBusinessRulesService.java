@@ -9,4 +9,6 @@ public interface RentalBusinessRulesService {
     void availableCar(int carId, int userId, LocalDate startDate, LocalDate endDate);
 
     void maxRentalDays(LocalDate startDate, LocalDate endDate);
+
+    void maxRentalDaysForDiscountedCar(int carId, LocalDate startDate, LocalDate endDate);
 }

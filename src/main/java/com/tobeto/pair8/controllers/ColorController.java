@@ -2,7 +2,6 @@ package com.tobeto.pair8.controllers;
 
 import com.tobeto.pair8.services.abstracts.ColorService;
 import com.tobeto.pair8.services.dtos.color.requests.AddColorRequest;
-import com.tobeto.pair8.services.dtos.color.requests.DeleteColorRequest;
 import com.tobeto.pair8.services.dtos.color.requests.UpdateColorRequest;
 import com.tobeto.pair8.services.dtos.color.responses.GetAllListColorResponse;
 import jakarta.validation.Valid;
@@ -15,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/colors")
 @AllArgsConstructor
+@CrossOrigin
 public class ColorController {
     private ColorService colorService;
     @GetMapping
@@ -31,10 +31,9 @@ public class ColorController {
     }
 
 
-    @DeleteMapping
-    @ResponseStatus(code = HttpStatus.OK)
-    public void delete(@RequestBody @Valid DeleteColorRequest deleteColorRequest){
-        colorService.delete(deleteColorRequest);
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        colorService.delete(id);
     }
 
     @PutMapping

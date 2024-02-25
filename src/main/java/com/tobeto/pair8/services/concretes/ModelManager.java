@@ -7,7 +7,6 @@ import com.tobeto.pair8.rules.model.ModelRulesService;
 import com.tobeto.pair8.services.abstracts.BrandService;
 import com.tobeto.pair8.services.abstracts.ModelService;
 import com.tobeto.pair8.services.dtos.model.requests.AddModelRequest;
-import com.tobeto.pair8.services.dtos.model.requests.DeleteModelRequest;
 import com.tobeto.pair8.services.dtos.model.requests.UpdateModelRequest;
 import com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose;
 import com.tobeto.pair8.services.dtos.model.responses.GetByIdModelResponse;
@@ -46,9 +45,9 @@ public class ModelManager implements ModelService {
     }
 
     @Override
-    public void delete(DeleteModelRequest deleteModelRequest) {
-        Model modelToDelete = modelRepository.findById(deleteModelRequest.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Model Bulunamad, ID:" + deleteModelRequest.getId()));
+    public void delete(Integer id) {
+        Model modelToDelete = modelRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Model Bulunamad, ID:" + id));
         modelRepository.delete(modelToDelete);
 
     }

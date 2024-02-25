@@ -6,7 +6,6 @@ import com.tobeto.pair8.repositories.ColorRepository;
 import com.tobeto.pair8.rules.color.ColorBusinessRulesService;
 import com.tobeto.pair8.services.abstracts.ColorService;
 import com.tobeto.pair8.services.dtos.color.requests.AddColorRequest;
-import com.tobeto.pair8.services.dtos.color.requests.DeleteColorRequest;
 import com.tobeto.pair8.services.dtos.color.requests.UpdateColorRequest;
 import com.tobeto.pair8.services.dtos.color.responses.GetAllListColorResponse;
 import lombok.AllArgsConstructor;
@@ -39,8 +38,8 @@ public class ColorManager implements ColorService {
     }
 
     @Override
-    public void delete(DeleteColorRequest deleteColorRequest) {
-        Color colorToDelete = colorRepository.findById(deleteColorRequest.getId()).orElseThrow();
+    public void delete(Integer id) {
+        Color colorToDelete = colorRepository.findById(id).orElseThrow();
         colorRepository.delete(colorToDelete);
 
 

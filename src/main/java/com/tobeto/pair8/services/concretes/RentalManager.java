@@ -9,7 +9,6 @@ import com.tobeto.pair8.services.abstracts.*;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
 import com.tobeto.pair8.services.dtos.invoice.requests.AddInvoiceRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
-import com.tobeto.pair8.services.dtos.rental.requests.DeleteRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
@@ -42,9 +41,10 @@ public class RentalManager implements RentalService {
         rentalBusinessRulesService.dateControl(addRentalRequest.getStartDate(), addRentalRequest.getEndDate());
         rentalBusinessRulesService.availableCar(addRentalRequest.getCarId(),addRentalRequest.getUserId(), addRentalRequest.getStartDate(), addRentalRequest.getEndDate());
         rentalBusinessRulesService.maxRentalDays(addRentalRequest.getStartDate(), addRentalRequest.getEndDate());
+        rentalBusinessRulesService.maxRentalDaysForDiscountedCar(addRentalRequest.getCarId(), addRentalRequest.getStartDate(), addRentalRequest.getEndDate());
         GetByIdCarResponse carResponse = carService.getById(addRentalRequest.getCarId());
         Rental rental = this.modelMapperService.forRequest().map(addRentalRequest, Rental.class);
-        rental.setTotalPrice(TotalPrice(addRentalRequest.getStartDate(), addRentalRequest.getEndDate(), carResponse.getDailyPrice()));
+        rental.setTotalPrice(TotalPrice(addRentalRequest.getStartDate(), addRentalRequest.getEndDate(), carResponse.getDailyPrice(), carResponse.getDiscount()));
         rental.setStartKilometer(carResponse.getKilometer());
        Rental rental1 = rentalRepository.save(rental);
        Invoice invoice =invoiceService.add(new AddInvoiceRequest(rental1,rental1.getTotalPrice()));
@@ -76,9 +76,9 @@ public class RentalManager implements RentalService {
     }
 
     @Override
-    public void delete(DeleteRentalRequest deleteRentalRequest) {
-        Rental rentalToDelete = rentalRepository.findById(deleteRentalRequest.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Bulunamadı, ID:" + deleteRentalRequest.getId()));
+    public void delete(Integer id) {
+        Rental rentalToDelete = rentalRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Bulunamadı, ID:" + id));
 
         rentalRepository.delete(rentalToDelete);
     }
@@ -105,8 +105,8 @@ public class RentalManager implements RentalService {
     }
 
 
-    private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice) {
+    private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice, double discount) {
         long daysBetween = start.until(end, ChronoUnit.DAYS);
-        return daysBetween * dailyPrice;
+        return daysBetween * dailyPrice * discount / 100;
     }
 }

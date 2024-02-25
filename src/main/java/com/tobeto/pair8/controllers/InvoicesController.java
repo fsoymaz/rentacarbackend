@@ -2,7 +2,6 @@ package com.tobeto.pair8.controllers;
 
 import com.tobeto.pair8.services.abstracts.InvoiceService;
 import com.tobeto.pair8.services.dtos.invoice.requests.AddInvoiceRequest;
-import com.tobeto.pair8.services.dtos.invoice.requests.DeleteInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.requests.UpdateInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetByIdInvoiceResponse;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetListInvoceResponse;
@@ -16,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/invoices")
 @AllArgsConstructor
+@CrossOrigin
 public class InvoicesController {
     private InvoiceService invoiceService;
 
@@ -26,9 +26,10 @@ public class InvoicesController {
     @PutMapping
     public void update(@RequestBody @Valid UpdateInvoiceRequest updateInvoiceRequest) {invoiceService.update(updateInvoiceRequest);}
 
-    @DeleteMapping
-    public void delete(@RequestBody @Valid DeleteInvoiceRequest deleteInvoiceRequest) {invoiceService.delete(deleteInvoiceRequest);}
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        invoiceService.delete(id);
+    }
     @GetMapping
     public List<GetListInvoceResponse> getAll() { return invoiceService.getAll();}
 

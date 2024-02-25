@@ -10,7 +10,6 @@ import com.tobeto.pair8.services.abstracts.CustomerService;
 import com.tobeto.pair8.services.abstracts.UserService;
 import com.tobeto.pair8.services.dtos.creditCard.responses.GetByIdCreditCardResponse;
 import com.tobeto.pair8.services.dtos.user.requests.AddUserRequest;
-import com.tobeto.pair8.services.dtos.user.requests.DeleteUserRequest;
 import com.tobeto.pair8.services.dtos.user.requests.UpdateUserRequest;
 import com.tobeto.pair8.services.dtos.user.responses.GetByIdUserResponse;
 import com.tobeto.pair8.services.dtos.user.responses.GetListUserResponse;
@@ -89,8 +88,8 @@ public class UserManager implements UserService {
 
 
     @Override
-    public void delete(DeleteUserRequest deleteUserRequest) {
-        User userDelete = userRepository.findById(deleteUserRequest.getId()).orElseThrow(() ->
+    public void delete(Integer id) {
+        User userDelete = userRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException("Kullanıcı bulunamadı"));
         userRepository.delete(userDelete);
 

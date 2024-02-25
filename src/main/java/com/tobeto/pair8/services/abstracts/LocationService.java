@@ -12,4 +12,5 @@ public interface LocationService {
     List<GetAllLocation> getAll();
     GetAllLocation getById(int id);
 
+    void delete(Integer id);
 }

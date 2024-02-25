@@ -3,6 +3,8 @@ package com.tobeto.pair8.rules.rental;
 import com.tobeto.pair8.core.utilities.exceptions.entityException.MaxRentalDaysExceededException;
 import com.tobeto.pair8.core.utilities.exceptions.entityException.EndDateBeforeStartDateException;
 import com.tobeto.pair8.core.utilities.exceptions.entityException.SameCarOrUserInAnotherRentalException;
+import com.tobeto.pair8.entities.concretes.Car;
+import com.tobeto.pair8.repositories.CarRepository;
 import com.tobeto.pair8.repositories.RentalRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +18,7 @@ import static com.tobeto.pair8.core.utilities.constants.RentalConstants.*;
 @Service
 public class RentalBusinessRulesManager implements RentalBusinessRulesService {
     private final RentalRepository rentalRepository;
-
+    private final CarRepository carRepository;
     @Override
     public void dateControl(LocalDate startDate, LocalDate endDate) {
         if (endDate.isBefore(startDate)) {
@@ -39,6 +41,16 @@ public class RentalBusinessRulesManager implements RentalBusinessRulesService {
     public void maxRentalDays(LocalDate startDate, LocalDate endDate) {
         if (ChronoUnit.DAYS.between(startDate, endDate) > 25) {
             throw new MaxRentalDaysExceededException(MAX_RENTAL_DAYS_EXCEEDED_MESSAGE );
+        }
+    }
+
+    @Override
+    public void maxRentalDaysForDiscountedCar(int carId, LocalDate startDate, LocalDate endDate) {
+        Car car = carRepository.findById(carId)
+                .orElseThrow(() -> new RuntimeException("Car not found with id: " + carId));
+
+        if (car.getDiscount() > 0 && ChronoUnit.DAYS.between(startDate, endDate) > 7) {
+            throw new RuntimeException("Discounted cars can be rented for a maximum of 7 days.");
         }
     }
 }

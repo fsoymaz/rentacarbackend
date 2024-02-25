@@ -29,6 +29,9 @@ public class Car extends BaseEntity {
     @Column(name="daily_price")
     private Double dailyPrice;
 
+    @Column (name = "discount")
+    private Double discount;
+
     @Column(name="image_path")
     private String imagePath;
 

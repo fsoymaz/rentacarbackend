@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/locations")
 @AllArgsConstructor
+@CrossOrigin
 public class LocationCotrollers {
 
     private LocationService locationService;
@@ -31,4 +32,8 @@ public class LocationCotrollers {
         locationService.add(addLocation);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        locationService.delete(id);
+    }
 }

@@ -2,7 +2,6 @@ package com.tobeto.pair8.services.abstracts;
 
 import com.tobeto.pair8.entities.concretes.Invoice;
 import com.tobeto.pair8.services.dtos.invoice.requests.AddInvoiceRequest;
-import com.tobeto.pair8.services.dtos.invoice.requests.DeleteInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.requests.UpdateInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetByIdInvoiceResponse;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetListInvoceResponse;
@@ -14,7 +13,7 @@ public interface InvoiceService {
 
     void update(UpdateInvoiceRequest updateInvoiceRequest);
 
-    void delete (DeleteInvoiceRequest deleteInvoiceRequest);
+    void delete (Integer id);
 
     List<GetListInvoceResponse> getAll();
 

@@ -50,8 +50,8 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
-    public void delete(DeleteCustomerRequest deleteCustomerRequest) {
-        Customer customerToDelete = customerRepository.findById(deleteCustomerRequest.getId()).orElseThrow();
+    public void delete(Integer id) {
+        Customer customerToDelete = customerRepository.findById(id).orElseThrow();
         customerRepository.delete(customerToDelete);
 
     }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class GetByIdInvoiceResponse {
     private int id;
     private String invoiceNo;
-    private Float totalPrice;
+    private Double totalPrice;
     private Float discountRate;
     private Float taxRate;
 

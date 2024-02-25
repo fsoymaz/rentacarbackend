@@ -2,12 +2,9 @@ package com.tobeto.pair8.controllers;
 
 import com.tobeto.pair8.services.abstracts.ModelService;
 import com.tobeto.pair8.services.dtos.model.requests.AddModelRequest;
-import com.tobeto.pair8.services.dtos.model.requests.DeleteModelRequest;
 import com.tobeto.pair8.services.dtos.model.requests.UpdateModelRequest;
 import com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose;
 import com.tobeto.pair8.services.dtos.model.responses.GetByIdModelResponse;
-import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
-import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/models")
 @AllArgsConstructor
+@CrossOrigin
 public class ModelsController {
     private final ModelService modelService;
 
@@ -30,10 +28,10 @@ public class ModelsController {
     @PutMapping
     public void update(@RequestBody @Valid UpdateModelRequest updateModelRequest) { modelService.update(updateModelRequest);}
 
-    @DeleteMapping
-    public void delete(@RequestBody @Valid DeleteModelRequest deleteModelRequest) {modelService.delete(deleteModelRequest);}
-
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        modelService.delete(id);
+    }
     @GetMapping
     public List<GetAllListModelRespose> getAll() {
         return modelService.getAll();

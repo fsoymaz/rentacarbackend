@@ -1,9 +1,7 @@
 package com.tobeto.pair8.services.abstracts;
 
 import com.tobeto.pair8.services.dtos.creditCard.responses.GetByIdCreditCardResponse;
-import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.user.requests.AddUserRequest;
-import com.tobeto.pair8.services.dtos.user.requests.DeleteUserRequest;
 import com.tobeto.pair8.services.dtos.user.requests.UpdateUserRequest;
 import com.tobeto.pair8.services.dtos.user.responses.GetByIdUserResponse;
 import com.tobeto.pair8.services.dtos.user.responses.GetListUserResponse;
@@ -17,7 +15,7 @@ public interface UserService extends UserDetailsService {
 
     void updateV2(UpdateUserRequest updateUserRequest);
 
-    void delete(DeleteUserRequest deleteUserRequest);
+    void delete(Integer deleteUserRequest);
     List<GetListUserResponse> getAll();
 
     GetByIdUserResponse getById(int id);

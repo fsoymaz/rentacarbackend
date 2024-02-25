@@ -6,7 +6,6 @@ import com.tobeto.pair8.repositories.BrandRepository;
 import com.tobeto.pair8.rules.brand.BrandBusinessRulesService;
 import com.tobeto.pair8.services.abstracts.BrandService;
 import com.tobeto.pair8.services.dtos.brand.requests.AddBrandRequest;
-import com.tobeto.pair8.services.dtos.brand.requests.DeleteBrandRequest;
 import com.tobeto.pair8.services.dtos.brand.requests.UpdateBrandRequest;
 import com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse;
 import jakarta.persistence.EntityNotFoundException;
@@ -42,13 +41,13 @@ public class BrandManager implements BrandService {
     }
 
     @Override
-    public void delete(DeleteBrandRequest deleteBrandRequest) {
-        Brand brandToDelete = brandRepository.findById(deleteBrandRequest.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Araç bulunamadı, ID: " + deleteBrandRequest.getId()));
+    public void delete(Integer id) {
+        Brand BrandToDelete = brandRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Brand bulunamadı, ID: " + id));
 
-        brandRepository.delete(brandToDelete);
-
+        brandRepository.delete(BrandToDelete);
     }
+
 
     @Override
     public List<GetAllListBrandResponse> getAll() {
@@ -58,5 +57,11 @@ public class BrandManager implements BrandService {
                         .forResponse().map(brand, GetAllListBrandResponse.class))
                 .collect(Collectors.toList());
         return brandResponses;
+    }
+
+    @Override
+    public GetAllListBrandResponse getByName(String brandName) {
+        return brandRepository.existsByName(brandName) ? this.modelMapperService
+                .forResponse().map(brandRepository.findByName(brandName), GetAllListBrandResponse.class) : null;
     }
 }

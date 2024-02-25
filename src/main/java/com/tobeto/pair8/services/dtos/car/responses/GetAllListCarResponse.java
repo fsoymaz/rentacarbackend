@@ -26,6 +26,7 @@ public class GetAllListCarResponse {
     private FuelType fuelType;
     private Category category;
     private short passengerCapacity;
+    private Double discount;
     private GetAllListModelRespose model;
     private GetColorNameResponse color;
     private GetAllLocation location;

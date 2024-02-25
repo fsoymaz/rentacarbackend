@@ -2,7 +2,6 @@ package com.tobeto.pair8.controllers;
 
 import com.tobeto.pair8.services.abstracts.RentalService;
 import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
-import com.tobeto.pair8.services.dtos.rental.requests.DeleteRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
@@ -17,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/rentals")
 @AllArgsConstructor
+@CrossOrigin
 public class RentalsController {
     private final RentalService rentalService;
 
@@ -32,9 +32,10 @@ public class RentalsController {
         rentalService.update(updateRentalRequest);
     }
 
-    @DeleteMapping
-    public void delete(@RequestBody @Valid DeleteRentalRequest deleteRentalRequest){ rentalService.delete(deleteRentalRequest);}
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        rentalService.delete(id);
+    }
 
     @GetMapping
     public List<GetListRentalResponse> getAll() {

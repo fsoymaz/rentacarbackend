@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/customers")
+@CrossOrigin
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -29,10 +30,9 @@ public class CustomerController {
         customerService.update(updateCustomerRequest);
     }
 
-    @DeleteMapping
-    @ResponseStatus(code = HttpStatus.OK)
-    public void delete(@RequestBody @Valid DeleteCustomerRequest deleteCustomerRequest) {
-        customerService.delete(deleteCustomerRequest);
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        customerService.delete(id);
     }
 
     @GetMapping

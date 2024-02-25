@@ -44,4 +44,10 @@ public class LocationManager implements LocationService {
         GetAllLocation locationResponse = this.modelMapperService.forResponse().map(location, GetAllLocation.class);
         return locationResponse;
     }
+
+    @Override
+    public void delete(Integer id) {
+        Location locationToDelete = locationRepository.findById(id).orElseThrow();
+        locationRepository.delete(locationToDelete);
+    }
 }

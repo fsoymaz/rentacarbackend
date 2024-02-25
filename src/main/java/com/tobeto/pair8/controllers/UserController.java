@@ -4,10 +4,7 @@ import com.tobeto.pair8.services.abstracts.AutService;
 import com.tobeto.pair8.services.abstracts.UserService;
 import com.tobeto.pair8.services.dtos.creditCard.responses.GetByIdCreditCardResponse;
 import com.tobeto.pair8.services.dtos.customer.request.UpdateRegisterCustomerAndUser;
-import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.user.requests.AddUserRequest;
-import com.tobeto.pair8.services.dtos.user.requests.DeleteUserRequest;
-import com.tobeto.pair8.services.dtos.user.requests.UpdateUserRequest;
 import com.tobeto.pair8.services.dtos.user.responses.GetByIdUserResponse;
 import com.tobeto.pair8.services.dtos.user.responses.GetListUserResponse;
 import jakarta.validation.Valid;
@@ -20,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/users")
 @AllArgsConstructor
+@CrossOrigin
 public class UserController {
     private final UserService userService;
     private final AutService autService;
@@ -42,12 +40,10 @@ public class UserController {
 
 
 
-    @DeleteMapping
-    @ResponseStatus(code = HttpStatus.OK)
-    public void delete(@RequestBody @Valid DeleteUserRequest deleteUserRequest){
-        userService.delete(deleteUserRequest);
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        userService.delete(id);
     }
-
     @GetMapping("/getById")
     public GetByIdUserResponse getById(@RequestParam @Valid int id){
         return userService.getById(id);

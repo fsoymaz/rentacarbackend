@@ -5,7 +5,6 @@ import com.tobeto.pair8.entities.concretes.Invoice;
 import com.tobeto.pair8.repositories.InvoiceRepository;
 import com.tobeto.pair8.services.abstracts.InvoiceService;
 import com.tobeto.pair8.services.dtos.invoice.requests.AddInvoiceRequest;
-import com.tobeto.pair8.services.dtos.invoice.requests.DeleteInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.requests.UpdateInvoiceRequest;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetByIdInvoiceResponse;
 import com.tobeto.pair8.services.dtos.invoice.responses.GetListInvoceResponse;
@@ -49,9 +48,9 @@ public class InvoiceManager implements InvoiceService {
     }
 
     @Override
-    public void delete(DeleteInvoiceRequest deleteInvoiceRequest){
-        Invoice invoiceToDelete = invoiceRepository.findById(deleteInvoiceRequest.getId())
-                .orElseThrow(() -> new EntityNotFoundException("Fatura bulunamadı, ID" + deleteInvoiceRequest.getId()));
+    public void delete(Integer id){
+        Invoice invoiceToDelete = invoiceRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Fatura bulunamadı, ID" + id));
 
         invoiceRepository.delete(invoiceToDelete);
 
