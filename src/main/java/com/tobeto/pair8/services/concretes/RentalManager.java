@@ -107,6 +107,10 @@ public class RentalManager implements RentalService {
 
     private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice, double discount) {
         long daysBetween = start.until(end, ChronoUnit.DAYS);
-        return daysBetween * dailyPrice * discount / 100;
+        double totalPrice = daysBetween * dailyPrice;
+        if (discount != 0) {
+            totalPrice = totalPrice - (totalPrice * discount / 100);
+        }
+        return totalPrice;
     }
 }
