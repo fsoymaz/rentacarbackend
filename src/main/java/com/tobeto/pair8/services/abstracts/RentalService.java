@@ -9,6 +9,7 @@ import com.tobeto.pair8.services.dtos.rental.responses.RentalInfoResponse;
 import java.util.List;
 
 public interface RentalService {
+
     RentalInfoResponse add(AddRentalRequest addRentalRequest);
 
     void update(UpdateRentalRequest updateRentalRequest);
@@ -17,6 +18,9 @@ public interface RentalService {
 
 
     List<GetListRentalResponse> getAll();
+
+    List<GetListRentalResponse> getAllRental(String email);
+
 
     GetByIdRentalResponse getById(int id);
 

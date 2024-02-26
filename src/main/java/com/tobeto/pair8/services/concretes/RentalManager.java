@@ -92,9 +92,19 @@ public class RentalManager implements RentalService {
                         .forResponse().map(rental, GetListRentalResponse.class))
                 .collect(Collectors.toList());
         return rentalResponses;
-
-
     }
+
+    @Override
+    public List<GetListRentalResponse> getAllRental(String email) {
+        List<Rental> rentals = rentalRepository.findAll();
+        List<GetListRentalResponse> rentalResponses = rentals.stream()
+                .map(rental -> this.modelMapperService
+                        .forResponse().map(rental, GetListRentalResponse.class))
+                .collect(Collectors.toList());
+        return rentalResponses.stream().filter(getListRentalResponse -> getListRentalResponse.getUserResponse().getEmail().equals(email)).toList();
+    }
+
+
 
     @Override
     public GetByIdRentalResponse getById ( int id){

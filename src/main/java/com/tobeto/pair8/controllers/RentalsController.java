@@ -46,4 +46,9 @@ public class RentalsController {
         return rentalService.getById(id);
     }
 
+    @GetMapping("/getAllRental")
+    public List<GetListRentalResponse>  getAllRental(@RequestParam @Valid String email){
+        return rentalService.getAllRental(email);
+    }
+
 }
