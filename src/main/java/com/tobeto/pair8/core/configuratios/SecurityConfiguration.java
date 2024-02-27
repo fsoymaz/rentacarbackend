@@ -37,37 +37,39 @@ public class SecurityConfiguration {
             "/api/corporateCustomers/**",
             "/api/rentals/**",
             "/api/models/**",
-            "/api/colors/**",
             "/api/auths/**",
             "api/brands/**",
             "/api/cars/**",
-            "/api/users/**",
+            "/api/colors/**",
+            "api/users/**",
             "api/imagedata/**",
             "api/test/**",
             "/api/invoices/**",
             "/api/locations/**",
             "/api/creditsCard/**",
-
-
-
-
     };
+
 
 
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(csrf-> csrf.disable())
+                .headers(headers->headers.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(WHITE_LIST_URLS).permitAll()
+
                         .requestMatchers("swagger-ui/**").permitAll()
-                        .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/users/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/users/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/users/getByEmail").hasAnyAuthority("USER", "ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/api/brands/**").hasAuthority("ADMIN")
-                        .requestMatchers("/api/colors/**").permitAll()
+
+                        //.requestMatchers(HttpMethod.POST,"/api/colors/**").hasAnyAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST,"/api/colors").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST,"/api/cars").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST,"/api/brands").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST,"/api/models").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST,"/api/locations").hasAuthority(Role.ADMIN.name())
+
+
+                        .requestMatchers(WHITE_LIST_URLS).permitAll()
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
@@ -82,7 +84,7 @@ public class SecurityConfiguration {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setPasswordEncoder(passwordEncoder);
         authenticationProvider.setUserDetailsService(userService);
-       return authenticationProvider;
+        return authenticationProvider;
     }
 
     @Bean
