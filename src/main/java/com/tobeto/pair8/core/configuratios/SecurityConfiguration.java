@@ -50,23 +50,22 @@ public class SecurityConfiguration {
     };
 
 
-
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf-> csrf.disable())
-                .headers(headers->headers.disable())
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers.disable())
                 .authorizeHttpRequests(auth -> auth
 
+                        // .requestMatchers().hasAnyAuthority(Role.ADMIN.name())
                         .requestMatchers("swagger-ui/**").permitAll()
 
                         //.requestMatchers(HttpMethod.POST,"/api/colors/**").hasAnyAuthority(Role.ADMIN.name())
-                        .requestMatchers(HttpMethod.POST,"/api/colors").hasAuthority(Role.ADMIN.name())
-                        .requestMatchers(HttpMethod.POST,"/api/cars").hasAuthority(Role.ADMIN.name())
-                        .requestMatchers(HttpMethod.POST,"/api/brands").hasAuthority(Role.ADMIN.name())
-                        .requestMatchers(HttpMethod.POST,"/api/models").hasAuthority(Role.ADMIN.name())
-                        .requestMatchers(HttpMethod.POST,"/api/locations").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST, "/api/colors").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST, "/api/cars").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST, "/api/brands").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST, "/api/models").hasAuthority(Role.ADMIN.name())
+                        .requestMatchers(HttpMethod.POST, "/api/locations").hasAuthority(Role.ADMIN.name())
 
 
                         .requestMatchers(WHITE_LIST_URLS).permitAll()
@@ -88,11 +87,10 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration)throws Exception{
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
 
         return configuration.getAuthenticationManager();
     }
-
 
 
 }
