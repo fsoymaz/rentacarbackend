@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("api/creditsCard")
 @AllArgsConstructor
-@CrossOrigin
 public class CreditCardsController {
 
     private CreditCardService creditCardService;

@@ -52,6 +52,7 @@ public class UpdateCarRequest {
  private String imagePath;
 
  private short passengerCapacity;
+ private Double discount;
 
 }
 
