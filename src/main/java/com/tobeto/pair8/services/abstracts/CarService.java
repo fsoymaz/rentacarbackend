@@ -42,4 +42,6 @@ public interface    CarService {
     void updateDiscount(CarDiscountRequest updateCarRequest, Integer carId);
 
     List<GetAllListCarResponse> findDiscountedCars();
+
+    Long getTotalCars();
 }

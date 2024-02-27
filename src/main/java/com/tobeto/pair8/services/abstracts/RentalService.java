@@ -6,6 +6,7 @@ import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.RentalInfoResponse;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface RentalService {
@@ -25,4 +26,5 @@ public interface RentalService {
     GetByIdRentalResponse getById(int id);
 
 
+    Long countDailyRentedCars(LocalDate date);
 }

@@ -105,4 +105,9 @@ public class CarManager implements CarService {
     public List<GetAllListCarResponse> findDiscountedCars() {
         return carRepository.findwithDiscountCars();
     }
+
+    @Override
+    public Long getTotalCars() {
+        return carRepository.countTotalCars();
+    }
 }

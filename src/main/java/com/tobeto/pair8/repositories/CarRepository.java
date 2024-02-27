@@ -101,5 +101,8 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
             "AND c.discount > 0")
     List<GetAllListCarResponse> findwithDiscountCars();
 
+    @Query("SELECT COUNT(c) FROM Car c")
+    Long countTotalCars();
+
 
 }

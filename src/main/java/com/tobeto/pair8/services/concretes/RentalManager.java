@@ -114,6 +114,11 @@ public class RentalManager implements RentalService {
         return rentalResponses;
     }
 
+    @Override
+    public Long countDailyRentedCars(LocalDate date) {
+        return rentalRepository.countDailyRentedCars(date);
+    }
+
 
     private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice, double discount) {
         long daysBetween = start.until(end, ChronoUnit.DAYS);

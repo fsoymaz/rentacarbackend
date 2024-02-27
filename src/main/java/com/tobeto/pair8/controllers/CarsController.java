@@ -96,4 +96,9 @@ public class CarsController {
         return ResponseEntity.ok(discountedCars);
     }
 
+    @GetMapping("/total")
+    public Long getTotalCars() {
+        return carService.getTotalCars();
+    }
+
 }

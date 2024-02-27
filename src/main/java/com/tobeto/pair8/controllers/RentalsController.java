@@ -8,9 +8,11 @@ import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.RentalInfoResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -50,4 +52,8 @@ public class RentalsController {
         return rentalService.getAllRental(email);
     }
 
+    @GetMapping("/daily")
+    public Long countDailyRentedCars(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        return rentalService.countDailyRentedCars(date);
+    }
 }

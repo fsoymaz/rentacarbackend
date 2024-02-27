@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class GetListRentalResponse {
     private LocalDate startDate;
     private LocalDate endDate;
+    private Double totalPrice;
     private GetAllListCarResponse carResponse;
     private GetListUserResponse userResponse;
 }
