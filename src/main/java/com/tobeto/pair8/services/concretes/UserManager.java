@@ -132,4 +132,9 @@ public class UserManager implements UserService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("No user found!"));
     }
+
+    @Override
+    public long getUserCount() {
+        return userRepository.count();
+    }
 }

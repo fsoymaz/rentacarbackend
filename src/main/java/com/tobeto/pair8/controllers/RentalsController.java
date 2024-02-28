@@ -56,4 +56,9 @@ public class RentalsController {
     public Long countDailyRentedCars(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return rentalService.countDailyRentedCars(date);
     }
+
+    @GetMapping("/incomeMonthly")
+    public Double getMonthlyIncome(@RequestParam int month, @RequestParam int year) {
+        return rentalService.calculateMonthlyIncome(month, year);
+    }
 }

@@ -21,6 +21,8 @@ public interface UserService extends UserDetailsService {
     GetByIdUserResponse getById(int id);
 
     GetByIdCreditCardResponse getCreditCardById(int id);
+
+    long getUserCount();
     //String login(LoginRequest loginRequest);
 
 

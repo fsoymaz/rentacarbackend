@@ -21,4 +21,7 @@ public interface RentalRepository extends JpaRepository<Rental, Integer> {
 
     @Query("SELECT COUNT(r) FROM Rental r WHERE r.startDate <= :date AND r.endDate >= :date")
     Long countDailyRentedCars(@Param("date") LocalDate date);
+
+    @Query("SELECT SUM(r.totalPrice) FROM Rental r WHERE MONTH(r.startDate) = :month AND YEAR(r.startDate) = :year")
+    Double findMonthlyIncome(@Param("month") int month, @Param("year") int year);
 }

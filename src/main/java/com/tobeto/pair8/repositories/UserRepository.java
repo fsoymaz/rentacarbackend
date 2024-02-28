@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
 
     CreditCard findByCreditId(int id);
+
+    long count();
 }

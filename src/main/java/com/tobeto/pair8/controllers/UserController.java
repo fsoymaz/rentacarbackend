@@ -59,5 +59,9 @@ public class UserController {
     public void registerCustomerAndUserUpdate(@RequestBody @Valid UpdateRegisterCustomerAndUser update){
         autService.registerCustomerAndUserUpdate(update);
     }
+    @GetMapping("/userCount")
+    public long getUserCount(){
+        return userService.getUserCount();
+    }
 
 }
