@@ -61,4 +61,9 @@ public class RentalsController {
     public Double getMonthlyIncome(@RequestParam int month, @RequestParam int year) {
         return rentalService.calculateMonthlyIncome(month, year);
     }
+
+    @GetMapping("/incomeYearly")
+    public List<Object[]> getYearlyIncome(@RequestParam int year) {
+        return rentalService.calculateYearlyIncome(year);
+    }
 }

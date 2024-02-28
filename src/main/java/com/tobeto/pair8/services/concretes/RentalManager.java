@@ -124,6 +124,11 @@ public class RentalManager implements RentalService {
         return rentalRepository.findMonthlyIncome(month, year);
     }
 
+    @Override
+    public List<Object[]> calculateYearlyIncome(int year) {
+        return rentalRepository.findYearlyIncome(year);
+    }
+
 
     private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice, double discount) {
         long daysBetween = start.until(end, ChronoUnit.DAYS);

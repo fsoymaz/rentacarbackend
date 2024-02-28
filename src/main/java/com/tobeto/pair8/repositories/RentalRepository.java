@@ -24,4 +24,7 @@ public interface RentalRepository extends JpaRepository<Rental, Integer> {
 
     @Query("SELECT SUM(r.totalPrice) FROM Rental r WHERE MONTH(r.startDate) = :month AND YEAR(r.startDate) = :year")
     Double findMonthlyIncome(@Param("month") int month, @Param("year") int year);
+
+    @Query("SELECT MONTH(r.startDate), SUM(r.totalPrice) FROM Rental r WHERE YEAR(r.startDate) = :year GROUP BY MONTH(r.startDate)")
+    List<Object[]> findYearlyIncome(@Param("year") int year);
 }

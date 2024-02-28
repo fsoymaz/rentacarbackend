@@ -29,4 +29,6 @@ public interface RentalService {
     Long countDailyRentedCars(LocalDate date);
 
     Double calculateMonthlyIncome(int month, int year);
+
+    List<Object[]> calculateYearlyIncome(int year);
 }
