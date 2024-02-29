@@ -11,6 +11,7 @@ import com.tobeto.pair8.services.dtos.invoice.requests.AddInvoiceRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
+import com.tobeto.pair8.services.dtos.rental.responses.GetDailyPriceResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.RentalInfoResponse;
 import com.tobeto.pair8.services.dtos.user.responses.GetByIdUserResponse;
@@ -19,6 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -129,6 +131,27 @@ public class RentalManager implements RentalService {
         return rentalRepository.findYearlyIncome(year);
     }
 
+    @Override
+    public List<GetDailyPriceResponse> calculateDailySalesForLastWeek() {
+        LocalDate now = LocalDate.now();
+        LocalDate start = now.minusWeeks(1).with(DayOfWeek.MONDAY);
+        LocalDate end = start.plusDays(6);
+        List<Object[]> results = rentalRepository.findSalesForPeriod(start, end);
+        return results.stream()
+                .map(result -> new GetDailyPriceResponse((LocalDate) result[0], (Double) result[1]))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<GetDailyPriceResponse> calculateDailySalesForThisWeek() {
+        LocalDate now = LocalDate.now();
+        LocalDate start = now.with(DayOfWeek.MONDAY);
+        LocalDate end = start.plusDays(6);
+        List<Object[]> results = rentalRepository.findSalesForPeriod(start, end);
+        return results.stream()
+                .map(result -> new GetDailyPriceResponse((LocalDate) result[0], (Double) result[1]))
+                .collect(Collectors.toList());
+    }
 
     private double TotalPrice(LocalDate start, LocalDate end, double dailyPrice, double discount) {
         long daysBetween = start.until(end, ChronoUnit.DAYS);

@@ -4,6 +4,7 @@ import com.tobeto.pair8.services.abstracts.RentalService;
 import com.tobeto.pair8.services.dtos.rental.requests.AddRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.requests.UpdateRentalRequest;
 import com.tobeto.pair8.services.dtos.rental.responses.GetByIdRentalResponse;
+import com.tobeto.pair8.services.dtos.rental.responses.GetDailyPriceResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.GetListRentalResponse;
 import com.tobeto.pair8.services.dtos.rental.responses.RentalInfoResponse;
 import jakarta.validation.Valid;
@@ -65,5 +66,16 @@ public class RentalsController {
     @GetMapping("/incomeYearly")
     public List<Object[]> getYearlyIncome(@RequestParam int year) {
         return rentalService.calculateYearlyIncome(year);
+    }
+
+
+    @GetMapping("/sales/lastWeek")
+    public List<GetDailyPriceResponse> getSalesForLastWeek() {
+        return rentalService.calculateDailySalesForLastWeek();
+    }
+
+    @GetMapping("/sales/thisWeek")
+    public List<GetDailyPriceResponse> getSalesForThisWeek() {
+        return rentalService.calculateDailySalesForThisWeek();
     }
 }
