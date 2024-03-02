@@ -52,15 +52,14 @@ public class AuthManager implements AutService {
         if (authentication.isAuthenticated()) {
             var user =userRepository.findByEmail(loginRequest.getEmail()).orElseThrow();
             String accessToken = jwtService.generateToken(loginRequest.getEmail(),user);
-            String refreshToken = jwtService.generateRefreshToken(loginRequest.getEmail(),user);
             AuthResponse authResponse = new AuthResponse();
             authResponse.setAccessToken("Bearer " + accessToken);
-            authResponse.setRefreshToken("Bearer " + refreshToken);
             return authResponse;
         }
 
         throw new RuntimeException("Kullanıcı adı ve şifre yanlış");
     }
+
 
     @Override
     public void registerCustomerAndUserAdd(AddRegisterCustomerAndUser addRegisterCustomerAndUser) {

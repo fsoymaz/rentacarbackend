@@ -24,10 +24,7 @@ import java.io.IOException;
 @AllArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
-
     private final UserService userService;
-
-    private final UserRepository userRepository;
 
     protected void doFilterInternal(@NonNull HttpServletRequest request,
                                     @NonNull HttpServletResponse response,
@@ -39,9 +36,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String jwt = jwtHeader.substring(7);
 
             String email = jwtService.extractUser(jwt);
-            var user2=userRepository.findByEmail(email).orElseThrow();
-
-
 
             if (email != null) {
                 UserDetails user = userService.loadUserByUsername(email);
@@ -51,29 +45,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                             new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
                     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                } else {
-                    String refreshTokenHeader = request.getHeader("Refresh-Token");
-
-                    if (refreshTokenHeader != null) {
-                        String refreshToken = refreshTokenHeader.substring(7); // Refresh token
-
-                        String refreshUsername = jwtService.extractUser(refreshToken);
-
-                        if (refreshUsername != null) {
-                            UserDetails refreshUser = userService.loadUserByUsername(refreshUsername);
-
-                            if (jwtService.validateToken(refreshToken, refreshUser)) {
-                                String newAccessToken = jwtService.generateToken(refreshUsername,user2);
-
-                                response.setHeader("Authorization", "Bearer " + newAccessToken);
-
-                                UsernamePasswordAuthenticationToken authenticationToken =
-                                        new UsernamePasswordAuthenticationToken(refreshUser, null, refreshUser.getAuthorities());
-                                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                            }
-                        }
-                    }
                 }
             }
         }

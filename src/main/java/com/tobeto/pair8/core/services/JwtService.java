@@ -23,18 +23,15 @@ public class JwtService {
     @Value("${jwt.expiration}")
     private long EXPIRATION;
 
-    @Value("${jwt.refresh_token.expiration}")
-    private long REFRESH_EXPIRATION;
+
 
     public String generateToken(String email, User user) {
         Map<String, Object> claims = new HashMap<>();
         return createToken(claims, email,user);
     }
 
-    public String generateRefreshToken(String email ,User user) {
-        Map<String, Object> claims = new HashMap<>();
-        return createRefreshToken(claims, email,user);
-    }
+
+
 
     public Boolean validateToken(String token, UserDetails userDetails) {
         String email = extractUser(token);
@@ -75,16 +72,7 @@ public class JwtService {
                 .compact();
     }
 
-    private String createRefreshToken(Map<String, Object> claims, String email ,User user) {
-        return Jwts.builder()
-                .setClaims(claims)
-                .claim("id",user.getId())
-                .setSubject(email)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + REFRESH_EXPIRATION))
-                .signWith(getSignKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
+
 
     private Key getSignKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET);
