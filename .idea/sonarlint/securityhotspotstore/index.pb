@@ -15,3 +15,11 @@ s
 Csrc/main/java/com/tobeto/pair8/services/concretes/BrandManager.java,f\6\f6e042efb23684f5068686f1f46cd2a81f0e5506
 w
 Gsrc/test/java/com/tobeto/pair8/services/concretes/BrandManagerTest.java,c\d\cd5fa9a6016d64bca5b1a8daf0c3320753cf2bb3
+k
+;src/main/java/com/tobeto/pair8/entities/concretes/User.java,4\1\41cebc4c1a6e47f79997ccaeae8d286021caf445
+|
+Lsrc/main/java/com/tobeto/pair8/core/configuratios/SecurityConfiguration.java,4\9\4938ebcfd127dbe2cc565f47b4f64fff3fc55c8b
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+s
+Csrc/main/java/com/tobeto/pair8/services/concretes/ModelManager.java,9\2\92fb3743e78b7a3bb5138a5d3d385a84eb5bf987

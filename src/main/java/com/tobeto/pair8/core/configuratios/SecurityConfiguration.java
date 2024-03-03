@@ -34,7 +34,6 @@ public class SecurityConfiguration {
             "/v3/api-docs",
             "/v3/api-docs/**",
             "/api/customers/**",
-            "/api/corporateCustomers/**",
             "/api/rentals/**",
             "/api/models/**",
             "/api/auths/**",

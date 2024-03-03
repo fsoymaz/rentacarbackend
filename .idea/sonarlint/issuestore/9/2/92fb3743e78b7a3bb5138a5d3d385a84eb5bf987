@@ -1,0 +1,7 @@
+
+‡
+java:S1488;"eImmediately return this expression instead of assigning it to the temporary variable "modelResposes".(ä´´¥þÿÿÿÿ8˜¡¬©à1
+ƒ
+java:S1488E"fImmediately return this expression instead of assigning it to the temporary variable "modelResponses".(Çþž°8˜¡¬©à1
+o
+java:S6204>"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8¬¡¬©à1
