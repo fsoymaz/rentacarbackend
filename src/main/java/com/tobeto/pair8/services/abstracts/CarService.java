@@ -8,13 +8,16 @@ import com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByIdCarResponse;
 import com.tobeto.pair8.services.dtos.car.responses.GetByPlateResponse;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
 public interface    CarService {
 
-    void add(AddCarRequest addCarRequest);
+
+    void add(AddCarRequest addCarRequest, MultipartFile file) throws IOException;
 
     void delete(Integer id);
 

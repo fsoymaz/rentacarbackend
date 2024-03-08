@@ -1,5 +1,6 @@
 package com.tobeto.pair8.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tobeto.pair8.entities.concretes.Category;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
@@ -12,9 +13,12 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -40,11 +44,15 @@ public class CarsController {
     }
 
 
-    @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public void add(@RequestBody @Valid AddCarRequest addCarRequest) {
-        carService.add(addCarRequest);
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void add(@RequestParam("car") String carJson,
+                    @RequestParam("file") MultipartFile file) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        AddCarRequest addCarRequest = objectMapper.readValue(carJson, AddCarRequest.class);
+        carService.add(addCarRequest, file);
     }
+
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {

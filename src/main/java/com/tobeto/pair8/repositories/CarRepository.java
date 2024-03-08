@@ -18,26 +18,18 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
     @Query("SELECT new com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse(" +
             "c.id, c.kilometer, c.plate, c.modelYear, c.dailyPrice, c.minFindeksRate, " +
-            "c.imagePath, c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount," +
-            "new com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose(" +
-            "c.model.id, c.model.name, " +
-            "new com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse(" +
-            "c.model.brand.id, c.model.brand.name)), " +
-            "new com.tobeto.pair8.services.dtos.color.responses.GetColorNameResponse(c.color.name), " +
+            "c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount, " +
+            "c.model.name, c.model.brand.name, c.color.name, c.image.imageUrl, c.uuid," +
             "new com.tobeto.pair8.services.dtos.location.responses.GetAllLocation(c.location.id, c.location.name)) " +
-            "FROM Car c  WHERE c.category = :category")
+            "FROM Car c WHERE c.category = :category")
     List<GetAllListCarResponse> findByCategory(@Param("category") Category category);
 
     @Query("SELECT new com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse(" +
             "c.id, c.kilometer, c.plate, c.modelYear, c.dailyPrice, c.minFindeksRate, " +
-            "c.imagePath, c.transmissionType, c.fuelType, c.category, c.passengerCapacity,c.discount, " +
-            "new com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose(" +
-            "c.model.id, c.model.name, " +
-            "new com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse(" +
-            "c.model.brand.id, c.model.brand.name)), " +
-            "new com.tobeto.pair8.services.dtos.color.responses.GetColorNameResponse(c.color.name)," +
-            "new  com.tobeto.pair8.services.dtos.location.responses.GetAllLocation(c.location.id, c.location.name)) " +
-            "FROM Car c " +
+            "c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount, " +
+            "c.model.name, c.model.brand.name, c.color.name, c.image.imageUrl, c.uuid," +
+            "new com.tobeto.pair8.services.dtos.location.responses.GetAllLocation(c.location.id, c.location.name)) " +
+            "FROM Car c "  +
             "WHERE c.id NOT IN (" +
             "    SELECT r.car.id " +
             "    FROM Rental r " +
@@ -47,14 +39,10 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
     @Query("SELECT new com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse(" +
             "c.id, c.kilometer, c.plate, c.modelYear, c.dailyPrice, c.minFindeksRate, " +
-            "c.imagePath, c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount," +
-            "new com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose(" +
-            "c.model.id, c.model.name, " +
-            "new com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse(" +
-            "c.model.brand.id, c.model.brand.name)), " +
-            "new com.tobeto.pair8.services.dtos.color.responses.GetColorNameResponse(c.color.name), " +
+            "c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount, " +
+            "c.model.name, c.model.brand.name, c.color.name, c.image.imageUrl, c.uuid," +
             "new com.tobeto.pair8.services.dtos.location.responses.GetAllLocation(c.location.id, c.location.name)) " +
-            "FROM Car c " +
+            "FROM Car c "  +
             "WHERE (:category IS NULL OR c.category = :category) AND " +
             "(:minPrice IS NULL OR c.dailyPrice >= :minPrice) AND " +
             "(:maxPrice IS NULL OR c.dailyPrice <= :maxPrice) AND " +
@@ -78,21 +66,21 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
     @Query("SELECT new com.tobeto.pair8.services.dtos.car.responses.GetByPlateResponse(" +
             "c.id, c.kilometer, c.plate, c.modelYear, c.dailyPrice, c.minFindeksRate, " +
-            "c.imagePath, c.transmissionType, c.fuelType, c.category, c.passengerCapacity" +
+            "c.transmissionType, c.fuelType, c.category, c.passengerCapacity" +
             ") FROM Car c WHERE c.plate = :plate")
     GetByPlateResponse findPlate(@Param("plate") String plate);
 
 
     @Query("SELECT new com.tobeto.pair8.services.dtos.car.responses.GetAllListCarResponse(" +
             "c.id, c.kilometer, c.plate, c.modelYear, c.dailyPrice, c.minFindeksRate, " +
-            "c.imagePath, c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount," +
-            "new com.tobeto.pair8.services.dtos.model.responses.GetAllListModelRespose(" +
-            "c.model.id, c.model.name, " +
-            "new com.tobeto.pair8.services.dtos.brand.responses.GetAllListBrandResponse(" +
-            "c.model.brand.id, c.model.brand.name)), " +
-            "new com.tobeto.pair8.services.dtos.color.responses.GetColorNameResponse(c.color.name)," +
+            " c.transmissionType, c.fuelType, c.category, c.passengerCapacity, c.discount, " +
+            "c.model.name, c.model.brand.name, c.color.name, c.image.imageUrl, c.uuid," +
             "new com.tobeto.pair8.services.dtos.location.responses.GetAllLocation(c.location.id, c.location.name)) " +
             "FROM Car c " +
+            "JOIN c.model " +
+            "JOIN c.model.brand " +
+            "JOIN c.color " +
+            "JOIN c.location " +
             "WHERE c.id NOT IN (" +
             "    SELECT r.car.id " +
             "    FROM Rental r " +
@@ -100,6 +88,7 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
             "    AND r.endDate >= CURRENT_DATE) " +
             "AND c.discount > 0")
     List<GetAllListCarResponse> findwithDiscountCars();
+
 
     @Query("SELECT COUNT(c) FROM Car c")
     Long countTotalCars();

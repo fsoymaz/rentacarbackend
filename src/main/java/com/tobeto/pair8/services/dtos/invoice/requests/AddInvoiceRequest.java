@@ -9,8 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class AddInvoiceRequest {
     @NotBlank(message = "Fatura No Giriniz!")
     @Size(min = 7)

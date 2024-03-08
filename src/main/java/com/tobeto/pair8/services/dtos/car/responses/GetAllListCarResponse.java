@@ -10,6 +10,9 @@ import com.tobeto.pair8.services.dtos.model.responses.GetModelNameResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -21,13 +24,15 @@ public class GetAllListCarResponse {
     private short modelYear;
     private Double dailyPrice;
     private short minFindeksRate;
-    private String imagePath;
     private TransmissionType transmissionType;
     private FuelType fuelType;
     private Category category;
     private short passengerCapacity;
     private Double discount;
-    private GetAllListModelRespose model;
-    private GetColorNameResponse color;
+    private String modelName;
+    private String brandName;
+    private String colorName;
+    private String imageUrl;
+    private UUID uuid;
     private GetAllLocation location;
 }

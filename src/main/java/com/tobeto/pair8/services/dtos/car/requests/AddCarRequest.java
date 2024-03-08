@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -46,7 +48,6 @@ public class AddCarRequest {
     private Double DailyPrice;
 
     private short passengerCapacity;
-    private String imagePath;
 
     @Positive
     private int modelId;
@@ -54,5 +55,4 @@ public class AddCarRequest {
     private int colorId;
     private int locationId;
     private Double discount;
-
 }

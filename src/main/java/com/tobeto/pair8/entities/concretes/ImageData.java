@@ -21,5 +21,9 @@ public class ImageData {
 
     @Column(name = "image_Url", length = 1000)
     private String imageUrl;
+
+    @OneToOne(mappedBy = "image")
+    private Car car;
+
 }
 

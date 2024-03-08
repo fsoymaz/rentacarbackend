@@ -3,8 +3,11 @@ package com.tobeto.pair8.services.concretes;
 import com.tobeto.pair8.core.utilities.mappers.services.ModelMapperService;
 import com.tobeto.pair8.entities.concretes.Car;
 import com.tobeto.pair8.entities.concretes.Category;
+import com.tobeto.pair8.entities.concretes.ImageData;
 import com.tobeto.pair8.repositories.CarRepository;
+import com.tobeto.pair8.repositories.ImageDataRepository;
 import com.tobeto.pair8.rules.car.CarBusinessRulesMenager;
+import com.tobeto.pair8.rules.car.CarBusinessRulesService;
 import com.tobeto.pair8.services.abstracts.CarService;
 import com.tobeto.pair8.services.dtos.car.requests.AddCarRequest;
 import com.tobeto.pair8.services.dtos.car.requests.CarDiscountRequest;
@@ -15,9 +18,12 @@ import com.tobeto.pair8.services.dtos.car.responses.GetByPlateResponse;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,8 +31,9 @@ import java.util.stream.Collectors;
 public class CarManager implements CarService {
     private final CarRepository carRepository;
     private final ModelMapperService modelMapperService;
-    private final CarBusinessRulesMenager carBusinessRulesMenager;
-
+    private final ImageDataManager imageDataManager;
+    private final ImageDataRepository dataRepository;
+    private final CarBusinessRulesService carBusinessRulesService;
     @Override
     public List<GetAllListCarResponse> getAll() {
         List<Car> cars = carRepository.findAll();
@@ -47,9 +54,19 @@ public class CarManager implements CarService {
 
 
     @Override
-    public void add(AddCarRequest addCarRequest) {
-        carBusinessRulesMenager.exceptionSamePlate(addCarRequest.getPlate());
+    public void add(AddCarRequest addCarRequest, MultipartFile file) throws IOException {
+        carBusinessRulesService.exceptionSamePlate(addCarRequest.getPlate());
         Car car = this.modelMapperService.forRequest().map(addCarRequest, Car.class);
+
+        // UUID ataması yapılıyor
+        String imageUrl = imageDataManager.uploadImage(file);
+        ImageData imageData = new ImageData();
+        imageData.setImageUrl(imageUrl);
+        dataRepository.save(imageData);
+
+        car.setImage(imageData);
+
+
 
         carRepository.save(car);
     }

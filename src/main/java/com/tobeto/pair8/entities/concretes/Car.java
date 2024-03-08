@@ -32,9 +32,6 @@ public class Car extends BaseEntity {
     @Column (name = "discount")
     private Double discount;
 
-    @Column(name="image_path")
-    private String imagePath;
-
     @ManyToOne()
     @JoinColumn(name="model_id")
     private Model model;
@@ -63,5 +60,9 @@ public class Car extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "location_id") // location_id, gerçek bir sütun adı olmalı
     private Location location;
-    
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private ImageData image;
 }
