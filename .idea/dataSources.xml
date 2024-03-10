@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@carserver.postgres.database.azure.com" uuid="ee6962b4-a513-434d-bdec-0b44e8e85dcd">
+    <data-source source="LOCAL" name="postgres@carserver.postgres.database.azure.com" uuid="4b74d515-fd19-4e41-8d9f-ea25b30dec89">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b749eb3-a8fe-4c13-962a-ea8454c94e90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main_rent-a-car-project.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aa.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41cebc4c1a6e47f79997ccaeae8d286021caf445" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/4938ebcfd127dbe2cc565f47b4f64fff3fc55c8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/6449e68b89353e6139a37741e70e2ac79117f043" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/81c4efcdc74495eb1f3b39b674ad01343d7a94b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/2/92fb3743e78b7a3bb5138a5d3d385a84eb5bf987" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e37c5e42f8248e85fd230effda131bb2d844c0a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bb7b558b2605b4057bd5cb0287ebdf0156638f0d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd5fa9a6016d64bca5b1a8daf0c3320753cf2bb3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d14f6ed7f5fb010cb9d8d1b4e1e73be0723a8bb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6e042efb23684f5068686f1f46cd2a81f0e5506" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/1/41cebc4c1a6e47f79997ccaeae8d286021caf445" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/9/4938ebcfd127dbe2cc565f47b4f64fff3fc55c8b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/4/6449e68b89353e6139a37741e70e2ac79117f043" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/1/81c4efcdc74495eb1f3b39b674ad01343d7a94b9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/2/92fb3743e78b7a3bb5138a5d3d385a84eb5bf987" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e37c5e42f8248e85fd230effda131bb2d844c0a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bb7b558b2605b4057bd5cb0287ebdf0156638f0d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/d/cd5fa9a6016d64bca5b1a8daf0c3320753cf2bb3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/1/d14f6ed7f5fb010cb9d8d1b4e1e73be0723a8bb8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/6/f6e042efb23684f5068686f1f46cd2a81f0e5506" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/Pair8Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/AuthsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/BrandsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/CarsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/ColorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/CreditCardsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/ImageDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/InvoicesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/LocationCotrollers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/ModelsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/RentalsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/ApplicationConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/CloudinaryConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/SecurityConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/filter/JwtAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/services/CloudinaryManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/services/JwtService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/BrandConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/CarConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/ColorConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/CreditCardConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/CustomerConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/MOdelConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/RentalConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/constants/UserConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/DuplicateCardNumberException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/DuplicateCompanyNameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/DuplicateNameAndSurnameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/DuplicateTaxNoException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/EmailAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/EndDateBeforeStartDateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/MaxRentalDaysExceededException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/MinorAgeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/ModelAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/PasswordMismatchException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/SameBrandException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/SameCarOrUserInAnotherRentalException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/SameColorNameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/SamePlateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/exceptions/entityException/UserAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/images/ImageUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/mappers/MapperConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/mappers/services/ModelMapperManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/utilities/mappers/services/ModelMapperService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/abstracts/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Brand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Car.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/CreditCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/FuelType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/ImageData$ImageDataBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/ImageData$ImageDataBuilderImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/ImageData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Rental.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/TransmissionType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/BrandRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/CarRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/ColorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/CreditCardRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/ImageDataRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/InvoiceRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/LocationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/ModelRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/RentalRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/brand/BrandBusinessRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/brand/BrandBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/car/CarBusinessRulesMenager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/car/CarBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/color/ColorBusinessRulesMenager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/color/ColorBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/creditCard/CreditCardBusinessRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/creditCard/CreditCardBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/customer/CustomerBusinesRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/customer/CustomerBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/model/ModelRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/model/ModelRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/rental/RentalBusinessRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/rental/RentalBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/user/UserBusinessRulesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/rules/user/UserBusinessRulesService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/AutService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/BrandService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/CarService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/ColorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/CreditCardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/ImageDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/InvoiceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/LocationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/ModelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/RentalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/abstracts/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/AuthManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/BrandManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/CarManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/ColorManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/CreditCardManeger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/CustomerManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/ImageDataManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/InvoiceManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/LocationManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/ModelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/RentalManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/UserManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/auth/requests/LoginRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/auth/responses/AuthResponse$AuthResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/auth/responses/AuthResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/brand/requests/AddBrandRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/brand/requests/UpdateBrandRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/brand/responses/GetAllListBrandResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/brand/responses/GetByNameBrandResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/brand/responses/GetIdBrandResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/requests/AddCarRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/requests/CarDiscountRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/requests/UpdateCarRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/responses/GetAllListCarResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/responses/GetByIdCarResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/car/responses/GetByPlateResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/color/requests/AddColorRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/color/requests/UpdateColorRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/color/responses/GetAllListColorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/color/responses/GetColorNameResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/creditCard/requests/AddCreditCardRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/creditCard/responses/GetByIdCreditCardResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/request/AddCustomerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/request/AddRegisterCustomerAndUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/request/UpdateCustomerRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/request/UpdateRegisterCustomerAndUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/responses/GetAllCustomerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/customer/responses/GetByIdCustomerResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/image/responses/ImageResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/invoice/requests/AddInvoiceRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/invoice/requests/UpdateInvoiceRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/invoice/responses/GetByIdInvoiceResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/invoice/responses/GetListInvoceResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/location/requests/AddLocation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/location/responses/GetAllLocation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/model/requests/AddModelRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/model/requests/UpdateModelRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/model/responses/GetAllListModelRespose.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/model/responses/GetByIdModelResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/model/responses/GetModelNameResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/requests/AddRentalRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/requests/UpdateRentalRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/GetByIdRentalResponse$GetByIdRentalResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/GetByIdRentalResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/GetDailyPriceResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/GetListRentalResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/RentalInfoResponse$RentalInfoResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/rental/responses/RentalInfoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/requests/AddCreditId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/requests/AddUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/requests/UpdateUserRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/responses/GetByIdUserResponse$GetByIdUserResponseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/responses/GetByIdUserResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/responses/GetByNameUserResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/dtos/user/responses/GetListUserResponse.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2dVodWOi3QzfcrxrIvR1uYRrUIa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Pair8Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Pair8Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b749eb3-a8fe-4c13-962a-ea8454c94e90" name="Changes" comment="" />
+      <created>1710102697932</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710102697932</updated>
+      <workItem from="1710102700304" duration="466000" />
+      <workItem from="1710103179807" duration="364000" />
+      <workItem from="1710104214134" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

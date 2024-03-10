@@ -110,7 +110,7 @@
         <dependency>
             <groupId>com.azure.spring</groupId>
             <artifactId>spring-cloud-azure-starter</artifactId>
-            <version></version>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
     <build>
