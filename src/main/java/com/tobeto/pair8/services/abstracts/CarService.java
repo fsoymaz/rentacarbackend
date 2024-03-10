@@ -37,7 +37,7 @@ public interface    CarService {
 
     List<GetAllListCarResponse> getAvailableCarsByCategory(LocalDate startDate,
                                                            LocalDate endDate, Integer locationId, Category category,
-                                                           Integer modelId, Integer brandId, Double minPrice, Double maxPrice);
+                                                            Double minPrice, Double maxPrice);
 
     GetByPlateResponse getPlate(String plate);
 

@@ -86,11 +86,9 @@ public class CarsController {
             @RequestParam LocalDate endDate,
             @RequestParam(required = false) Integer locationId,
             @RequestParam(required = false) Category category,
-            @RequestParam(required = false) Integer brandId,
-            @RequestParam(required = false) Integer modelId,
             @RequestParam(required = false) Double minPrice,
             @RequestParam(required = false) Double maxPrice) {
-        return carService.getAvailableCarsByCategory(startDate, endDate, locationId, category, modelId, brandId, minPrice, maxPrice);
+        return carService.getAvailableCarsByCategory(startDate, endDate, locationId, category, minPrice, maxPrice);
     }
 
     @PutMapping("/discount")

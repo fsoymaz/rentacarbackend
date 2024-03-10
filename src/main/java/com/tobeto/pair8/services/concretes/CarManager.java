@@ -101,8 +101,8 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public List<GetAllListCarResponse> getAvailableCarsByCategory(LocalDate startDate, LocalDate endDate, Integer locationId, Category category, Integer modelId, Integer brandId, Double minPrice, Double maxPrice) {
-        return carRepository.findAvailableCarsByCategory(startDate, endDate, locationId, category, modelId, brandId, minPrice, maxPrice);
+    public List<GetAllListCarResponse> getAvailableCarsByCategory(LocalDate startDate, LocalDate endDate, Integer locationId, Category category, Double minPrice, Double maxPrice) {
+        return carRepository.findAvailableCarsByCategory(startDate, endDate, locationId, category, minPrice, maxPrice);
     }
 
     @Override

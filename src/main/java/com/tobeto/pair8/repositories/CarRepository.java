@@ -49,17 +49,15 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
             "c.id NOT IN (" +
             "    SELECT r.car.id " +
             "    FROM Rental r " +
+
             "    WHERE r.startDate <= :endDate AND r.endDate >= :startDate" +
-            ") AND (:modelId IS NULL OR c.model.id = :modelId OR :modelId IS NULL) " +
-            "AND (:brandId IS NULL OR c.model.brand.id = :brandId OR :brandId IS NULL) " +
+            ") " +
             "AND c.location.id = :locationId AND c.discount <= 0")
     List<GetAllListCarResponse> findAvailableCarsByCategory(
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate,
             @Param("locationId") Integer locationId,
             @Param("category") Category category,
-            @Param("modelId") Integer modelId,
-            @Param("brandId") Integer brandId,
             @Param("minPrice") Double minPrice,
             @Param("maxPrice") Double maxPrice
     );
