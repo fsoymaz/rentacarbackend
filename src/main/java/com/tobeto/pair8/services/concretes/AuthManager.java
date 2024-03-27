@@ -42,6 +42,7 @@ public class AuthManager implements AutService {
     private final UserBusinessRulesService userBusinessRulesService;
     private final JwtService jwtService;
     private final UserRepository userRepo;
+    private final MailService mailService;
     @Override
     public Object login(LoginRequest loginRequest) {
 
@@ -82,6 +83,8 @@ public class AuthManager implements AutService {
         User userSaved = userRepository.save(userAut);
         customer.setUser(userSaved);
         customerRepository.save(customer);
+        mailService.sendWelcomeEmail(userAut.getEmail());
+
     }
 
 
@@ -104,7 +107,7 @@ public class AuthManager implements AutService {
         updateRequest.setUserId(user.getId());
         customerService.update(updateRequest);
         userRepository.saveAndFlush(user);
-
+        mailService.sendUpdateInfoEmail(user.getEmail());
 
     }
 }

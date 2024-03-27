@@ -46,6 +46,8 @@ public class SecurityConfiguration {
             "/api/invoices/**",
             "/api/locations/**",
             "/api/creditsCard/**",
+            "/reset-password/**",
+            "/forgot-password/**",
     };
 
 

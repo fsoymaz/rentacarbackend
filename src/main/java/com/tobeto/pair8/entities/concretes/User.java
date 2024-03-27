@@ -41,6 +41,8 @@ public class User extends BaseEntity implements UserDetails {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="credit_id")
     private CreditCard credit;
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
 
     public List<CreditCard> getAllCreditCards() {
         return this.credit != null ? List.of(this.credit) : Collections.emptyList();
@@ -84,6 +86,9 @@ public class User extends BaseEntity implements UserDetails {
     }
 
 
+    public void setResetPasswordToken(String token) {
+        this.resetPasswordToken = token;
+    }
 }
 
 
