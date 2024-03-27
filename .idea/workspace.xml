@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b749eb3-a8fe-4c13-962a-ea8454c94e90" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/services/concretes/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b74d515-fd19-4e41-8d9f-ea25b30dec89.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b74d515-fd19-4e41-8d9f-ea25b30dec89.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/Pair8Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/Pair8Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/controllers/AuthsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/controllers/AuthsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/core/configuratios/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/core/configuratios/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/entities/concretes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/entities/concretes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/services/concretes/AuthManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobeto/pair8/services/concretes/AuthManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tobeto/pair8/Pair8ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tobeto/pair8/services/concretes/BrandManagerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/AuthsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/controllers/AuthsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/SecurityConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/core/configuratios/SecurityConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/entities/concretes/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/AuthManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tobeto/pair8/services/concretes/AuthManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tobeto/pair8/Pair8ApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/tobeto/pair8/services/concretes/BrandManagerTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="1b749eb3-a8fe-4c13-962a-ea8454c94e90" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,6 +128,7 @@
       <workItem from="1711488249015" duration="9417000" />
       <workItem from="1711550189924" duration="20000" />
       <workItem from="1711553012088" duration="1671000" />
+      <workItem from="1711558703598" duration="398000" />
     </task>
     <servers />
   </component>
