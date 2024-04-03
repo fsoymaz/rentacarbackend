@@ -10,7 +10,7 @@ public class Pair8Application {
     public static void main(String[] args) {
         // Https deneme
         Dotenv dotenv = Dotenv.configure()
-                .directory("/Users/fatihsoymaz/Desktop/bb")
+                .directory(System.getProperty("user.dir"))
                 .load();
 
         System.setProperty("spring.datasource.url", dotenv.get("DATABASE_URL"));

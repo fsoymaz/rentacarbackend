@@ -21,7 +21,7 @@ public class DefaultAdminConfig {
                 User admin = User.builder()
                         .username("admin")
                         .password(passwordEncoder.encode("admin"))
-                        .email("fthsymz60@gmail.com")
+                        .email("admin@gmail.com")
                         .authorities(Role.ADMIN) // Role.ADMIN'i doğrudan atayın
                         .build();
                 User savedAdmin = userRepository.save(admin);
